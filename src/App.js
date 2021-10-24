@@ -1,7 +1,7 @@
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import AppHeader from "./Components/AppHeader/AppHeader";
-import ShoppingList from "./Pages/ShoppingList/ShoppingList";
+import ShoppingList from "./Components/ShoppingList/ShoppingList";
 import Box from "@mui/material/Box";
 import "./App.css";
 
