@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { DialogTitle, DialogContent, DialogActions, TextField, Dialog } from '@mui/material';
 import ButtonRenderer from '../Utils/Button/Button';
 import { Grid } from '@material-ui/core';
-import { PRODUCT_NAME_ERROR, PRODUCT_NAME_ERROR_TEXT, PRODUCT_DESC_ERROR, PRODUCT_DESC_ERROR_TEXT } from '../Utils/Constants';
+import { PRODUCT_NAME_ERROR, PRODUCT_NAME_ERROR_TEXT, PRODUCT_DESC_ERROR, PRODUCT_DESC_ERROR_TEXT, CHARACTER_LIMIT } from '../Utils/Constants';
 import "./AddProduct.scss";
 
 const AddProduct = (props) => {
@@ -10,7 +10,7 @@ const AddProduct = (props) => {
         item,
         isOpen,
         close,
-        saveProduct
+        saveItem
     } = props;
 
     const [itemName, setItemName] = useState(item.name);
@@ -28,7 +28,7 @@ const AddProduct = (props) => {
         const isValid = detectedErrors[PRODUCT_NAME_ERROR] === null &&
                         detectedErrors[PRODUCT_DESC_ERROR] === null;
         if (isValid) {
-            saveProduct({
+            saveItem({
                 id: item.id,
                 name: itemName,
                 description: itemDescription,
@@ -39,6 +39,10 @@ const AddProduct = (props) => {
             setSubmitAttempted(true);
             setErrors(detectedErrors);
         }
+    };
+
+    const handleChange = (event) => {
+        setItemDescription(event.target.value);
     };
 
     return ( isOpen &&
@@ -80,16 +84,22 @@ const AddProduct = (props) => {
                             fullWidth
                             multiline
                             rows={5}
+                            inputProps={{
+                                maxlength: CHARACTER_LIMIT
+                            }}
                             value={itemDescription}
-                            onChange={(ev) => setItemDescription(ev.target.value)}
+                            helperText={errors[PRODUCT_DESC_ERROR] !== undefined && errors[PRODUCT_DESC_ERROR] !== null 
+                                            ? `${errors[PRODUCT_DESC_ERROR]}` 
+                                            : `${itemDescription.length}/${CHARACTER_LIMIT}`}
+                            onChange={(ev) => handleChange(ev)}
                             error={submitAttempted && errors[PRODUCT_DESC_ERROR] !== null}
-                            helperText={errors[PRODUCT_DESC_ERROR]} />
+                            />
                     </Grid>
                     <Grid item xs={12}>
                         <TextField
                             select
                             fullWidth
-                            label="Quantity"
+                            label="How Many?"
                             SelectProps={{
                                 native: true,
                             }}

@@ -6,7 +6,7 @@ import "./MainList.scss";
 const CardList = (itemLists) => {
   return (
     <>
-      {itemLists.map((item, index) => {
+      {itemLists.map((item) => {
         return (
           <Grid item className="MainList">
             <Card>

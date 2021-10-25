@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import "./ShoppingList.scss";
 import { Card, Grid, CardContent } from "@mui/material";
 import ButtonRenderer from "../Utils/Button/Button";
 import AddProduct from "../AddProduct/AddProduct";
 import MainList from "../MainList/MainList";
 import Item from "../Item";
+import "./ShoppingList.scss";
 
 const ShoppingList = () => {
   const [items, setProducts] = useState([]);
@@ -24,13 +24,13 @@ const ShoppingList = () => {
     setPopupOpen(false);
   };
 
-  const saveProduct = (item) => {
+  const saveItem = (item) => {
     setProducts([...items, item]);
   };
 
   const addItem = () => {
-    setCurrentProduct(new Item());
     setPopupOpen(true);
+    setCurrentProduct(new Item());
   };
 
   const emptyContainer = () => {
@@ -93,7 +93,7 @@ const ShoppingList = () => {
           item={currentProduct}
           isOpen={popupOpen}
           close={closePopup}
-          saveProduct={saveProduct}
+          saveItem={saveItem}
         />
       )}
     </>
