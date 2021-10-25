@@ -1,14 +1,14 @@
 import { Card, Grid, CardContent, Checkbox } from "@mui/material";
 import EditIcon from '@mui/icons-material/EditOutlined';
 import DeleteIcon from '@mui/icons-material/DeleteOutline';
-import "./ProductList.scss";
+import "./MainList.scss";
 
 const CardList = (itemLists) => {
   return (
     <>
       {itemLists.map((item, index) => {
         return (
-          <Grid item className="ProductList">
+          <Grid item className="MainList">
             <Card>
               <CardContent>
                 <Grid container rowSpacing={1}>
@@ -37,7 +37,7 @@ const CardList = (itemLists) => {
   );
 };
 
-const ProductList = (props) => {
+const MainList = (props) => {
   const { products } = props;
 
   return (
@@ -53,4 +53,4 @@ const ProductList = (props) => {
   );
 };
 
-export default ProductList;
+export default MainList;

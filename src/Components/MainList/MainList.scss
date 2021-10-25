@@ -10,13 +10,13 @@
   font-size: 1em;
 }
 
-.ProductList {
+.MainList {
   max-width: 180vh !important;
   min-width: 100vh !important;
 }
 
 .MuiSvgIcon-root {
-  transition: all 300ms; // if you want the color to gradually change
+  transition: all 300ms;
 }
 
 .MuiSvgIcon-root:hover {

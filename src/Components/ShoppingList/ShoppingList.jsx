@@ -3,7 +3,7 @@ import "./ShoppingList.scss";
 import { Card, Grid, CardContent } from "@mui/material";
 import ButtonRenderer from "../Utils/Button/Button";
 import AddProduct from "../AddProduct/AddProduct";
-import ProductList from "../ProductList/ProductList";
+import MainList from "../MainList/MainList";
 import Item from "../Item";
 
 const ShoppingList = () => {
@@ -78,7 +78,7 @@ const ShoppingList = () => {
             </ButtonRenderer>
           </Grid>
           <Grid item xs={12}>
-            <ProductList products={items} />
+            <MainList products={items} />
           </Grid>
       </Grid>
     );
