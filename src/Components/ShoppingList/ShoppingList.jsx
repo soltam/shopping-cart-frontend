@@ -12,15 +12,11 @@ const ShoppingList = () => {
   const [popupOpen, setPopupOpen] = useState(false);
   const openId = useRef(1);
 
-  useEffect(() => {
-    // Load saved items from local-storage
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     if (!popupOpen) {
       openId.current = openId.current + 1;
-      // Increment id each time modal closes, in order to force
-      // renew the Dialog element (to clear the inernal state)
     }
   }, [popupOpen]);
 
@@ -66,16 +62,24 @@ const ShoppingList = () => {
 
   const productListContainer = () => {
     return (
-      <Grid container alignItems="center" className="productListContainer" alignContent="center">
-        {/* <Grid item xs={12}>
-          <Grid item xs={6}>Your Items</Grid>
-          <Grid item xs={6} alignItems="right">
-            <ButtonRenderer onClick={addItem}>Add item</ButtonRenderer>
+      <Grid
+        container
+        alignItems="center"
+        className="productListContainer"
+        alignContent="center"
+        rowSpacing={1}
+      >
+          <Grid item xs={12}>
+            <h3 className="mainLabel">Your Items</h3>
           </Grid>
-        </Grid> */}
-        <Grid item xs={12}>
-          <ProductList products={items} />
-        </Grid>
+          <Grid item xs={12}>
+            <ButtonRenderer color="primary" onClick={addItem}>
+              Add item
+            </ButtonRenderer>
+          </Grid>
+          <Grid item xs={12}>
+            <ProductList products={items} />
+          </Grid>
       </Grid>
     );
   };
