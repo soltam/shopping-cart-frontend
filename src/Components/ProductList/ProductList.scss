@@ -1,0 +1,25 @@
+.ItemName {
+  font-family: "Nunito", sans-serif !important;
+  color: #000000;
+  font-size: 1em;
+}
+
+.ItemDesc {
+  font-family: "Nunito", sans-serif !important;
+  color: #7d7a7a !important;
+  font-size: 1em;
+}
+
+.ProductList {
+  max-width: 180vh !important;
+  min-width: 100vh !important;
+}
+
+.MuiSvgIcon-root {
+  transition: all 300ms; // if you want the color to gradually change
+}
+
+.MuiSvgIcon-root:hover {
+  color: #1871E8 !important;
+  cursor: pointer;
+}

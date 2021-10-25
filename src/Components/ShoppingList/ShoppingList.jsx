@@ -3,6 +3,7 @@ import "./ShoppingList.scss";
 import { Card, Grid, CardContent } from "@mui/material";
 import ButtonRenderer from "../Utils/Button/Button";
 import AddProduct from "../AddProduct/AddProduct";
+import ProductList from "../ProductList/ProductList";
 import Item from "../Item";
 
 const ShoppingList = () => {
@@ -25,11 +26,11 @@ const ShoppingList = () => {
 
   const closePopup = () => {
     setPopupOpen(false);
-  }
+  };
 
   const saveProduct = (item) => {
     setProducts([...items, item]);
-  }
+  };
 
   const addItem = () => {
     setCurrentProduct(new Item());
@@ -63,22 +64,34 @@ const ShoppingList = () => {
     );
   };
 
+  const productListContainer = () => {
+    return (
+      <Grid container alignItems="center" className="productListContainer" alignContent="center">
+        {/* <Grid item xs={12}>
+          <Grid item xs={6}>Your Items</Grid>
+          <Grid item xs={6} alignItems="right">
+            <ButtonRenderer onClick={addItem}>Add item</ButtonRenderer>
+          </Grid>
+        </Grid> */}
+        <Grid item xs={12}>
+          <ProductList products={items} />
+        </Grid>
+      </Grid>
+    );
+  };
+
   return (
     <>
-      {
-                items.length === 0
-                    ? emptyContainer() : emptyContainer()
-      }
-      {
-                popupOpen &&
-                <AddProduct
-                    key={openId.current}
-                    item={currentProduct}
-                    isOpen={popupOpen}
-                    close={closePopup}
-                    saveProduct={saveProduct}
-                />
-      }
+      {items.length === 0 ? emptyContainer() : productListContainer()}
+      {popupOpen && (
+        <AddProduct
+          key={openId.current}
+          item={currentProduct}
+          isOpen={popupOpen}
+          close={closePopup}
+          saveProduct={saveProduct}
+        />
+      )}
     </>
   );
 };
