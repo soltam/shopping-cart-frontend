@@ -1,4 +1,7 @@
 # SHOPPING CART FRONTEND USING REACT AND MATERIAL
+![Screen Shot 2021-10-25 at 2 34 35 PM](https://user-images.githubusercontent.com/17206457/138750946-17489fdc-6f81-46f5-8bb0-1047b0f22e8e.png)
+![Screen Shot 2021-10-25 at 2 34 42 PM](https://user-images.githubusercontent.com/17206457/138750948-295f0f8b-1d18-4b82-b4d7-41b8e1962253.png)
+![Screen Shot 2021-10-25 at 2 34 50 PM](https://user-images.githubusercontent.com/17206457/138750949-6d11c55d-5d64-4a1b-a588-e68b62cd83ed.png)
 
 ### `npm start`
 
