@@ -6,5 +6,6 @@ export default class Item {
         this.name = name;
         this.description = desc || '';
         this.quantity = 1;
+        this.purchased = false;
     }
 }
