@@ -1,5 +1,5 @@
 import Button from '@material-ui/core/Button';
-import './Button.scss';
+import './ButtonRenderer.scss';
 
 const ButtonRenderer = (props) => {
     let className =  + 'ButtonRenderer';

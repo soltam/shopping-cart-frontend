@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Card, Grid, CardContent } from "@mui/material";
-import ButtonRenderer from "../Utils/Button/Button";
+import ButtonRenderer from "../Utils/ButtonRenderer/ButtonRenderer";
 import AddProduct from "../AddProduct/AddProduct";
 import MainList from "../MainList/MainList";
 import Item from "../Item";

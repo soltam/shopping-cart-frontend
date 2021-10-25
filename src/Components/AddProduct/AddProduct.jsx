@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { DialogTitle, DialogContent, DialogActions, TextField, Dialog } from '@mui/material';
-import ButtonRenderer from '../Utils/Button/Button';
+import ButtonRenderer from '../Utils/ButtonRenderer/ButtonRenderer';
 import { Grid } from '@material-ui/core';
 import { PRODUCT_NAME_ERROR, PRODUCT_NAME_ERROR_TEXT, PRODUCT_DESC_ERROR, PRODUCT_DESC_ERROR_TEXT, CHARACTER_LIMIT } from '../Utils/Constants';
 import "./AddProduct.scss";
